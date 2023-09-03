@@ -1,0 +1,66 @@
+
+.parent{
+    background-color:hsl(200, 60%, 20%) ;
+    width: 500px;
+    height: 500px;
+}
+
+.child{
+    width:250px ;
+    height: 250px;
+    background-color: #414;
+    transition: transform 1s ease-in;
+    /* animation: left-to-right 1s ease-in  forwards 3 alternate ; */
+     /* animation: left-to-right 1s ease-in  backwards infinite alternate 1s; */
+}
+.parent:hover .child{
+    /* background-color: green; */
+    animation: left-to-right 1s ease-in  backwards 4 alternate 2s ;
+    /* animation-play-state: paused; */
+}
+@keyframes left-to-right {
+    0%{
+        transform: translateX(0);
+    }
+    33%{
+        transform:translateY(100%) ;
+    }
+    66%{
+        transform:translateX(100%) translateY(100%) ;
+    }
+    100%{
+        
+        transform: translateX(100%);
+    }
+    
+}
+
+.Transform{
+    background-color: rgba(173, 9, 173, 0.315);
+    height: 210px;
+    width: 200px;
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.Transform{
+    /* transform: rotate(90deg);  */
+    /* transform: rotateX(415deg);  */
+    /* transform: rotateZ(45deg); */
+    /* transform: rotate(.45turn); */
+    /* transform: scale(2); */
+    /* transform: translate(-100px); */
+    /* transform: scale(1.4); */
+    transform: skew(30deg, -40deg);
+}
+.Transform::after{
+    content: "After";
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
